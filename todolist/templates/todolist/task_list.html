@@ -1,17 +1,11 @@
-<html>
-    <head>
-        <title>TODOList APP</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">TODOList App</a></h1>
+{% extends 'todolist/base.html' %}
+
+{% block content %}        
+    {% for task in tasks %}
+        <div class="ui checkbox">
+            <input type="checkbox" name="example">{{ task.status }}
+            <label>{{ task.text }}</label>
         </div>
-        {% for task in tasks %}
-            <div class="ui checkbox">
-                <input type="checkbox" name="example">{{ task.status }}
-                <label>{{ task.text }}</label>
-            </div>
-        {% endfor %}
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
         
