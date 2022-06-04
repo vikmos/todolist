@@ -1,11 +1,24 @@
 {% extends 'todolist/base.html' %}
 
-{% block content %}        
+{% block content %}
     {% for task in tasks %}
-        <div class="ui checkbox">
-            <input type="checkbox" name="example">{{ task.status }}
-            <label>{{ task.text }}</label>
+        {% if task.task_status == True %}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox">{{ task.status }}
+                    <label>{{ task.text }}</label>
+                </div>
+       {% else %}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox">{{ task.status }}
+                    <label>{{ task.text }}</label>
+                </div>
+            </div>
         </div>
+        {% endif %}
     {% endfor %}
 {% endblock %}
         
