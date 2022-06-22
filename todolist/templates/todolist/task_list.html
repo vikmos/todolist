@@ -2,22 +2,20 @@
 
 {% block content %}
     <div class="container">
-    {% for task in tasks.current_tasks %}
         <div class="row">
-            <div class="col">
+            {% for task in tasks.current_tasks %}
+            <div class="col-8">
                 <input type="checkbox">{{ task.status }}
                 <label>{{ task.text }}</label>
             </div>
-        </div>
-    {% endfor %}
-    {% for task in tasks.end_tasks %}
-        <div class="row">
-            <div class="col">
-                <input type="checkbox">{{ task.status }}
+            {% endfor %}
+            {% for task in tasks.end_tasks%}
+            <div class="col-4">
+                <input type="checkbox" checked disabled>{{ task.status }}
                 <label>{{ task.text }}</label>
             </div>
+            {% endfor %}
         </div>
-    {% endfor %}
     </div>
 {% endblock %}
         
