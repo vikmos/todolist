@@ -1,21 +1,22 @@
 {% extends 'todolist/base.html' %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            {% for task in tasks.current_tasks %}
-            <div class="col-8">
-                <input type="checkbox">{{ task.status }}
-                <label>{{ task.text }}</label>
-            </div>
-            {% endfor %}
-            {% for task in tasks.end_tasks%}
-            <div class="col-4">
-                <input type="checkbox" checked disabled>{{ task.status }}
-                <label>{{ task.text }}</label>
-            </div>
-            {% endfor %}
+    <div class="row">
+        <div class="col-md">
+        {% for task in tasks.current_tasks %}
+            <input type="checkbox">{{ task.status }}
+            <label>{{ task.text }}</label>
+            <br>
+        {% endfor %}
         </div>
+        <div class="col-md">
+        {% for task in tasks.end_tasks%}
+            <input type="checkbox" checked disabled>{{ task.status }}
+            <label>{{ task.text }}</label>
+            <br>
+        {% endfor %}
+        </div>
+    </div>
     </div>
 {% endblock %}
         
