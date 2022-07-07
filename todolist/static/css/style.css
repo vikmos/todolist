@@ -1,0 +1,33 @@
+:root {
+    --color1: darkolivegreen;
+    --color2: whitesmoke;
+    --color3: silver;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background: var(--color3);
+}
+
+header {
+    padding: 10px 0;
+    color: var(--color1);
+    background-color: var(--color3);
+}
+
+.todo-list {
+    margin: 10px 0;
+}
+
+.todo-list .todo-item {
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 0;
+    background: var(--color3);
+}
