@@ -1,9 +1,15 @@
 {% extends 'todolist/base.html' %}
 
 {% block content %}
-    <h1>New task</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+    <div class="container m-1 p-1 rounded mx-auto bg-ligth shadow">
+            <form method="POST" class="post-form">{% csrf_token %}
+                    {% for field in form %}
+                    <div> 
+                        {{field.label_tag}}
+                        <div class="mx-auto">{{field}}</div><label><label>
+                    </div>
+                    {% endfor %}
+                <button type="submit" class="save btn btn-success btn-sm">Save</button>
+            </form>
+    </div>
 {% endblock %}
